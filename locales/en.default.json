@@ -37,7 +37,7 @@
         "tiktok": "TikTok"
       }
     },
-    "continue_shopping": "Continue shopping111",
+    "continue_shopping": "Continue shopping",
     "pagination": {
       "label": "Pagination",
       "page": "Page {{ number }}",
@@ -45,7 +45,7 @@
       "previous": "Previous page"
     },
     "search": {
-      "search": "Search",
+      "search": "Search1111",
       "reset": "Clear search term"
     },
     "cart": {
