@@ -1,0 +1,11 @@
+{
+  "name": "Alternate product template",
+  "sections": {
+    "main": {
+      "type": "main-product"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
