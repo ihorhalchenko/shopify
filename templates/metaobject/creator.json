@@ -14,7 +14,7 @@
       "settings": {
         "custom_liquid": "<h1>{{ metaobject.name }}</h1>\n{{ metaobject.photo | metafield_tag }}\n<p>{{ metaobject.bio }}</p>\nCreator of...\n<ul>\n{% for product in metaobject.creator_of.value %}\n<li>{{ product.featured_image | img_tag }} </li>\n{% endfor %}\n</ul>",
         "color_scheme": "",
-        "padding_top": 40,
+        "padding_top": 20,
         "padding_bottom": 52
       }
     }
