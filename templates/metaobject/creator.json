@@ -11,15 +11,64 @@
   "sections": {
     "custom_liquid_RxRTdi": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "<h1>{{ metaobject.name }}</h1>\n{{ metaobject.photo | metafield_tag }}\n<p>{{ metaobject.bio }}</p>\nCreator of...\n<ul>\n{% for product in metaobject.creator_of.value %}\n<li>{{ product.featured_image | img_tag }} </li>\n{% endfor %}\n</ul>",
         "color_scheme": "",
         "padding_top": 20,
         "padding_bottom": 52
       }
+    },
+    "image_with_text_qAwMxQ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MKfpMz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text{{ metaobject.name.value }}",
+            "heading_size": "h1"
+          }
+        },
+        "text_mhg6y7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.{{ metaobject.bio | metafield_tag }}</p>",
+            "text_style": "body"
+          }
+        },
+        "button_emjhDw": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_MKfpMz",
+        "text_mhg6y7",
+        "button_emjhDw"
+      ],
+      "settings": {
+        "image": "{{ metaobject.photo.value }}",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "custom_liquid_RxRTdi"
+    "custom_liquid_RxRTdi",
+    "image_with_text_qAwMxQ"
   ]
 }
