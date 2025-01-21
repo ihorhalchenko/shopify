@@ -1,0 +1,109 @@
+<h2> Variant with shop.metaobjects </h2>
+
+{% assign creators = shop.metaobjects.creator.values %}
+
+{% if template contains "product" %}
+    {% assign creators = product.metafields.custom.creator.value %}
+{% endif %}
+
+<div class="page-width creators">
+    {% for creator in creators %}
+        <div class="creator">
+            <div class="creator-image">{{ creator.photo | img_tag }}</div>
+            <h2 class="creator-title">{{ creator.name }}</h2>
+            <p class="creator-paragraph">{{ creator.bio }}</p>
+            <h3>Creator of...</h3>
+            <div class="creator-products">
+                {% for product in creator.creator_of.value %}
+                    <a href="{{ product.url }}" class="creator-product">{{ product.featured_image | img_tag }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+<h2> Variant with blocks </h2>
+
+<div class="page-width creators">
+    {% for block in section.blocks %}
+        <div class="creator">
+            {{ block }}
+            <div class="creator-image">{{ block.settings.photo | img_tag }}</div>
+            <h2 class="creator-title">{{ block.settings.name }}</h2>
+            <p class="creator-paragraph">{{ block.settings.bio }}</p>
+            <h3>Creator of...</h3>
+            <div class="creator-products">
+                {% for product in block.settings.creator_of %}
+                    <a href="{{ product.url }}" class="creator-product">{{ product.featured_image | img_tag }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<style>
+    h2 {
+        text-align: center;
+    }
+    .creators {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        display: flex;
+        justify-content: center;
+        column-gap: 20px;
+    }
+    .creator {
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.23) 0 2px 5px 5px;
+        padding: 20px;
+    }
+    .creator-products {
+        display: flex;
+        column-gap: 15px;
+        justify-content: center;
+    }
+    .creator-product {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-decoration: none;
+        color: rgb(var(--color-foreground));
+    }
+
+</style>
+
+{% schema %}
+{
+  "name": "Creators",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "creator",
+      "name": "Creator",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "richtext",
+          "id": "bio",
+          "label": "Bio"
+        },
+        {
+          "type": "product_list",
+          "id": "creator_of",
+          "label": "List of products created"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
