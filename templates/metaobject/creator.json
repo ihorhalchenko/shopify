@@ -35,20 +35,11 @@
             "text": "<p>{{ metaobject.bio | metafield_tag }}</p>",
             "text_style": "body"
           }
-        },
-        "button_emjhDw": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
         }
       },
       "block_order": [
         "heading_MKfpMz",
-        "text_mhg6y7",
-        "button_emjhDw"
+        "text_mhg6y7"
       ],
       "settings": {
         "image": "{{ metaobject.photo.value }}",
