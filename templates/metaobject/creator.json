@@ -25,14 +25,14 @@
         "heading_MKfpMz": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text{{ metaobject.name.value }}",
+            "heading": "{{ metaobject.name.value }}",
             "heading_size": "h1"
           }
         },
         "text_mhg6y7": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.{{ metaobject.bio | metafield_tag }}</p>",
+            "text": "<p>{{ metaobject.bio | metafield_tag }}</p>",
             "text_style": "body"
           }
         },
