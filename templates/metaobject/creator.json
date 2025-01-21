@@ -69,7 +69,7 @@
     "creator_product_list_jMLWrC": {
       "type": "creator-product-list",
       "settings": {
-        "title": "Featured collection",
+        "title": "Creator of...",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
